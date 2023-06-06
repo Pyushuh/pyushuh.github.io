@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="en" data-bs-theme="auto">
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.111.3">
+    <title>Zoé OSMANI - Portfolio</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/carousel/">
+
+    <link href="./assets/dist/css/bootstrap.min.css" rel="stylesheet"/>
+
+    <style>
+      body {
+  display: grid;
+  grid-template-rows: 1fr auto;
+  grid-template-areas: "main" "footer";
+  overflow-x: hidden;
+  background: #F5F7FA;
+  min-height: 100vh;
+  font-family: 'Open Sans', sans-serif;
+}
+body .footer {
+  z-index: 1;
+  --footer-background:#ED5565;
+  display: grid;
+  position: relative;
+  grid-area: footer;
+  min-height: 12rem;
+}
+body .footer .bubbles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1rem;
+  background: #000000;
+  filter: url("#blob");
+}
+body .footer .bubbles .bubble {
+  position: absolute;
+  left: var(--position, 50%);
+  background: #434343;
+  border-radius: 100%;
+  animation: bubble-size var(--time, 2s) ease-in infinite var(--delay, 0s), bubble-move var(--time, 2s) ease-in infinite var(--delay, 0s);
+  transform: translate(-50%, 100%);
+}
+body .footer .content {
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-gap: 4rem;
+  padding: 2rem;
+  background: linear-gradient(to top, #212529, #434343);
+}
+body .footer .content a, body .footer .content p {
+  color: #F5F7FA;
+}
+body .footer .content b {
+  color: white;
+}
+body .footer .content p {
+  margin: 0;
+  font-size: 1rem;
+}
+body .footer .content > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+body .footer .content > div > div {
+  margin: 0.25rem 0;
+}
+body .footer .content > div > div > * {
+  margin-right: 0.5rem;
+}
+body .footer .content > div .image {
+  align-self: center;
+  width: 4rem;
+  height: 4rem;
+  margin: 0.25rem 0;
+  background-size: cover;
+  background-position: center;
+}
+@keyframes bubble-size {
+  0%, 75% {
+    width: var(--size, 4rem);
+    height: var(--size, 4rem);
+  }
+  100% {
+    width: 0rem;
+    height: 0rem;
+  }
+}
+@keyframes bubble-move {
+  0% {
+    bottom: -4rem;
+  }
+  100% {
+    bottom: var(--distance, 10rem);
+  }
+}
+.heading {
+  text-align: center;
+}
+
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+      .b-example-divider {
+        width: 100%;
+        height: 3rem;
+        background-color: rgba(0, 0, 0, .1);
+        border: solid rgba(0, 0, 0, .15);
+        border-width: 1px 0;
+        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+      }
+
+      .b-example-vr {
+        flex-shrink: 0;
+        width: 1.5rem;
+        height: 100vh;
+      }
+
+      .bi {
+        vertical-align: -.125em;
+        fill: currentColor;
+      }
+
+      .nav-scroller {
+        position: relative;
+        z-index: 2;
+        height: 2.75rem;
+        overflow-y: hidden;
+      }
+
+      .nav-scroller .nav {
+        display: flex;
+        flex-wrap: nowrap;
+        padding-bottom: 1rem;
+        margin-top: -1px;
+        overflow-x: auto;
+        text-align: center;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .btn-bd-primary {
+        --bd-violet-bg: #712cf9;
+        --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+
+        --bs-btn-font-weight: 600;
+        --bs-btn-color: var(--bs-white);
+        --bs-btn-bg: var(--bd-violet-bg);
+        --bs-btn-border-color: var(--bd-violet-bg);
+        --bs-btn-hover-color: var(--bs-white);
+        --bs-btn-hover-bg: #6528e0;
+        --bs-btn-hover-border-color: #6528e0;
+        --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+        --bs-btn-active-color: var(--bs-btn-hover-color);
+        --bs-btn-active-bg: #5a23c8;
+        --bs-btn-active-border-color: #5a23c8;
+      }
+      .bd-mode-toggle {
+        z-index: 1500;
+      }
+    </style>
+
+	<script src="https://kit.fontawesome.com/92f620c939.js" crossorigin="anonymous"></script>
+  </head>
+
+  <body>
+    
+    <header data-bs-theme="dark">
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="#"><i class="fa-solid fa-computer"></i></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+              <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                <li class="nav-item">
+                  <a class="nav-link" href="./index.html">Profil</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-dark"><a class="dropdown-item" href="./projets.html">Projets</a></button>
+                    <button type="button" class="btn btn-dark dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+                      <span class="visually-hidden">Toggle Dropdown</span>
+                    </button>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="./ppi.html">PPI</a></li>
+                      <li><a class="dropdown-item" href="./schola.html">Schola</a></li>
+                      <li><a class="dropdown-item" href="./fiscalis.html">Fiscalis 3</a></li>
+                    </ul>
+                  </div>
+              </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="./veille.html">Veille</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="./contact.html">Contact</a>
+                </li><li class="nav-item">
+                  <a class="nav-link" href="https://www.linkedin.com/in/zoe-osmani/"><i class="fa-brands fa-linkedin"></i></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </header>
+
+<main>
+
+  <h1>Cover your page.</h1>
+    <p class="lead"></p>
+  <!-- Marketing messaging and featurettes
+  ================================================== -->
+  <!-- Wrap the rest of the page in another container to center all the content. -->
+
+  <div class="container marketing">
+
+    <!-- Three columns of text below the carousel -->
+    <div class="row">
+    <br>
+    <br>
+    </div><!-- /.row -->
+
+    <div class="row featurette">
+      <div class="col-md-7">
+        <h2 class="featurette-heading fw-normal lh-1">La veille technologique, <span class="text-body-secondary">c'est quoi?</span></h2>
+        <p class="lead">
+          <br>
+          La veille technologique consiste à surveiller et à rester informé des dernières avancées technologiques dans un domaine spécifique. 
+          Cela implique de suivre les actualités, les publications, les blogs, les conférences et les tendances émergentes. La veille technologique 
+          permet de rester à jour, d'anticiper les changements et d'identifier de nouvelles opportunités pour innover et améliorer les pratiques existantes.
+          <br> 
+          C'est un processus essentiel pour les professionnels afin de rester compétitifs dans un environnement en constante évolution.
+        </p>
+      </div>
+      <div class="col-md-5">
+        <img src="./assets/img/veille_illu.png" alt="Photo de l'apprenante">
+      </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <div class="row featurette">
+      <div class="col-md-7 order-md-2">
+        <h2 class="featurette-heading fw-normal lh-1"><span class="text-body-secondary"></span></h2>
+        <p class="lead">
+          <br>
+      </div>
+      <div class="col-md-5 order-md-1">
+        <img src="./assets/img/profil.png" alt="illustration">
+      </div>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="bubbles">
+      <div class="bubble" style="--size:3.1102988421940156rem; --distance:9.43411846651391rem; --position:12.072015662448251%; --time:3.6318477394919726s; --delay:-3.754485310274106s;"></div>
+      <div class="bubble" style="--size:4.252475391643374rem; --distance:7.6909717525376475rem; --position:44.749660808722076%; --time:2.138838668797128s; --delay:-2.7466831191885968s;"></div>
+      <div class="bubble" style="--size:4.8678953260915705rem; --distance:9.702274428270128rem; --position:83.83411388523285%; --time:3.0799890171904116s; --delay:-3.379753045235446s;"></div>
+      <div class="bubble" style="--size:3.6348965430696834rem; --distance:7.754372753344775rem; --position:60.69053909194636%; --time:2.3032375295390404s; --delay:-2.5455699605755084s;"></div>
+      <div class="bubble" style="--size:5.045035666675734rem; --distance:6.9300171498021585rem; --position:66.18826504012954%; --time:2.6359800506689997s; --delay:-2.0810776755411897s;"></div>
+      <div class="bubble" style="--size:5.985849937622827rem; --distance:8.212948579749455rem; --position:25.717534296744333%; --time:2.263447312401965s; --delay:-2.413758458409079s;"></div>
+      <div class="bubble" style="--size:5.760381847859033rem; --distance:9.983271049155507rem; --position:76.88002110127721%; --time:2.737493661633328s; --delay:-3.0189528167232327s;"></div>
+      <div class="bubble" style="--size:4.074735209694564rem; --distance:6.552917732227922rem; --position:53.18332315110887%; --time:3.831401008540383s; --delay:-3.6666696155791216s;"></div>
+      <div class="bubble" style="--size:3.870158869859885rem; --distance:8.594413840747848rem; --position:61.00783725376267%; --time:3.7052693044201406s; --delay:-2.9359897435528994s;"></div>
+      <div class="bubble" style="--size:2.0536528466420747rem; --distance:6.02679899292597rem; --position:85.3606095393154%; --time:3.2606147573455218s; --delay:-2.2965455069190392s;"></div>
+      <div class="bubble" style="--size:2.810273292360653rem; --distance:6.230675942459902rem; --position:60.23122018423106%; --time:2.421895708171313s; --delay:-3.9307198039593745s;"></div>
+      <div class="bubble" style="--size:5.366836448137538rem; --distance:7.312881864362463rem; --position:-2.2610137023170607%; --time:3.610850637139396s; --delay:-3.205019407732654s;"></div>
+      <div class="bubble" style="--size:2.2468182617785577rem; --distance:8.435856966545757rem; --position:94.47267016245014%; --time:2.2218674561166547s; --delay:-2.2681815830501377s;"></div>
+      <div class="bubble" style="--size:3.83147552606603rem; --distance:6.718012686127457rem; --position:-1.9662565829760337%; --time:3.1859185689392544s; --delay:-2.134786409411663s;"></div>
+      <div class="bubble" style="--size:3.892558727711802rem; --distance:8.469574582742704rem; --position:99.97289116200234%; --time:2.2214776526867657s; --delay:-3.2152527773697654s;"></div>
+      <div class="bubble" style="--size:2.5313974474086387rem; --distance:9.73775912092886rem; --position:72.87658298564224%; --time:3.649750538914937s; --delay:-2.371837860097461s;"></div>
+      <div class="bubble" style="--size:2.2688777097953503rem; --distance:9.591012281807249rem; --position:45.41016799882835%; --time:3.7962496093824547s; --delay:-3.085949592268622s;"></div>
+      <div class="bubble" style="--size:5.231526721604668rem; --distance:6.694549863928142rem; --position:52.37245557096418%; --time:3.4716469854733156s; --delay:-2.087109128403992s;"></div>
+      <div class="bubble" style="--size:4.3714081123172335rem; --distance:8.764392292875394rem; --position:86.75656978216975%; --time:3.942095653216552s; --delay:-3.6481288971833434s;"></div>
+      <div class="bubble" style="--size:3.6893084796404274rem; --distance:6.889919443689559rem; --position:58.73129493097855%; --time:3.420706947574251s; --delay:-3.893766001887779s;"></div>
+      <div class="bubble" style="--size:4.152898492245956rem; --distance:7.122588900906678rem; --position:91.00629389110672%; --time:2.5524701487434216s; --delay:-2.7548096929936885s;"></div>
+      <div class="bubble" style="--size:5.398334991207884rem; --distance:9.118541496521235rem; --position:101.44127482411407%; --time:3.4318617512963083s; --delay:-2.1448747382352114s;"></div>
+      <div class="bubble" style="--size:2.267911831174922rem; --distance:7.700678275600638rem; --position:67.07528842814563%; --time:2.128267238812057s; --delay:-3.335919731653017s;"></div>
+      <div class="bubble" style="--size:4.126956217145388rem; --distance:7.800354429621699rem; --position:38.60344073490557%; --time:3.69611949636343s; --delay:-2.0371436891582153s;"></div>
+    </div>
+    <div class="content"><p>&copy; 2022-2023 &middot;<a href="./mentions.html">Mentions légales</a></p></div>
+  </>
+  <svg style="position:fixed; top:100vh">
+    <defs>
+      <filter id="blob">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur"></feGaussianBlur>
+        <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="blob"></feColorMatrix>
+        <feComposite in="SourceGraphic" in2="blob" operator="atop"></feComposite>
+      </filter>
+    </defs>
+  </svg>
+</main>
+   
+  </body>
+</html>

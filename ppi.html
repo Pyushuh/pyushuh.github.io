@@ -111,14 +111,17 @@
             <a class="nav-link" href="./index.html">Profil</a>
           </li>
           <li class="nav-item dropdown">
-            <button class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-              Projets
-            </button>
-            <ul class="dropdown-menu dropdown-menu-dark">
-              <li><a class="dropdown-item" href="./ppi.html">PPI</a></li>
-              <li><a class="dropdown-item" href="./schola.html">Schola</a></li>
-              <li><a class="dropdown-item" href="./fiscalis.html">Fiscalis 3</a></li>
-            </ul>
+            <div class="btn-group">
+              <button type="button" class="btn btn-dark"><a class="dropdown-item" href="./projets.html">Projets</a></button>
+              <button type="button" class="btn btn-dark dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+                <span class="visually-hidden">Toggle Dropdown</span>
+              </button>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="./ppi.html">PPI</a></li>
+                <li><a class="dropdown-item" href="./schola.html">Schola</a></li>
+                <li><a class="dropdown-item" href="./fiscalis.html">Fiscalis 3</a></li>
+              </ul>
+            </div>
         </li>
 
           <li class="nav-item">
@@ -174,7 +177,44 @@
       <div class="col-md-7 order-md-2">
         <h2 class="featurette-heading fw-normal lh-1">Liste <span class="text-body-secondary">des missions</span></h2>
         <p class="lead">
-            <br>
+            <div class="accordion" id="accordionExample">
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    Refonte du CSS de l'application
+                  </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                  <div class="accordion-body">
+                    <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    Intégration des outils de développement DevExtreme
+                  </button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                  <div class="accordion-body">
+                    <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    Mise à niveau du code en PHP 7.4 
+                  </button>
+                </h2>
+                <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                  <div class="accordion-body">
+                    <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                  </div>
+                </div>
+              </div>
+            </div>
         </p>
       </div>
       <div class="col-md-5 order-md-1">
@@ -228,7 +268,7 @@
 
   <!-- FOOTER -->
   <footer class="container">
-    <p>&copy; 2022-2023 &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+    <div class="content"><p>&copy; 2022-2023 &middot;<a href="./mentions.html">Mentions légales</a></p></div>
   </footer>
 </main>
    
